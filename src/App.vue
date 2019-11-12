@@ -2,23 +2,63 @@
   <div id="app" class="vue-croep">
     <div
       class="wrapper"
-      @mousemove="update"
+      @mousemove="move"
       @mouseup="isDragging = false"
       @mousedown.prevent="isDragging = true"
     >
-      <img ref="image" class="image" :src="require(`${src}`)" />
+      <img
+        v-show="isLoaded && !hasError"
+        ref="image"
+        class="image"
+        :src="src"
+        @load="isLoaded = true"
+        @error="hasError = true"
+      />
 
-      <div class="crop-selector" :style="selectorStyle" />
+      <div v-if="hasError">ERROR</div>
+
+      <svg
+        v-else
+        width="500"
+        height="500"
+        fill="white"
+        class="wrapper-selector"
+      >
+        <defs>
+          <filter id="shadow">
+            <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity=".5" />
+          </filter>
+
+          <clipPath id="mask">
+            <circle :r="selector / 2" :cx="coordinates.x" :cy="coordinates.y" />
+          </clipPath>
+        </defs>
+
+        <circle
+          class="selector"
+          stroke-width="2"
+          stroke="#FFFFFF"
+          filter="url(#shadow)"
+          :r="selector / 2"
+          :cx="coordinates.x"
+          :cy="coordinates.y"
+        />
+
+        <image
+          opacity=".5"
+          width="500px"
+          height="500px"
+          preserveAspectRatio="none"
+          :href="src"
+        />
+      </svg>
     </div>
 
-    <!-- <input type="text" v-model="selector"> -->
-
-    <div class="preview-wrapper">
-      <img ref="preview" class="preview" :style="previewStyle" />
-    </div>
+    <input class="range" type="range" min="50" max="200" step="1" v-model="selector">
 
     <button @click="create">create</button>
-    <canvas id="canvas" width="250" height="250" style="border: 1px solid black"></canvas>
+
+    <canvas id="canvas" width="250" height="250" style="border: 1px solid black" />
   </div>
 </template>
 
@@ -27,9 +67,14 @@ export default {
   name: 'vue-croep',
 
   props: {
+    size: {
+      type: Number,
+      default: 500
+    },
+
     src: {
       type: String,
-      default: './assets/logo.png'
+      default: 'https://i0.wp.com/roteirodenoticias.com.br/wp-content/uploads/2018/04/mengo_atropela.jpg?fit=800%2C440'
     }
   },
 
@@ -42,85 +87,93 @@ export default {
         height: null
       },
       selector: 100,
+      isLoaded: false,
+      hasError: false,
       isDragging: false
     }
   },
 
   watch: {
-    src: { immediate: true, handler: 'loadImage' }
-  },
-
-  mounted () {
-    const image = this.$refs['image']
-
-    const { width, height } = image
-
-    this.coordinates = {
-      width,
-      height,
-      x: this.selector / 2,
-      y: this.selector / 2
-    }
+    isLoaded: { handler: 'init' },
+    selector: { handler: 'update' }
   },
 
   computed: {
-    scale () {
-      return this.coordinates.width / this.selector
-    },
+    translate () {
+      const { x, y, width } = this.coordinates
+      const scale = width / this.selector
 
-    previewStyle () {
-      const { x, y } = this.coordinates
-
-      const preview = 250
-      const halfScale = this.scale / 2
+      const halfImage = 250
+      const halfScale = scale / 2
       const halfSelector = this.selector / 2
-      const previewScale = preview * this.scale
 
       return {
-        'width': `${previewScale}px`,
-        'height': `${previewScale}px`,
-        'transform': `
-          translateX(${(-x + halfSelector) * halfScale}px)
-          translateY(${(-y + halfSelector) * halfScale}px)
-        `
+        scale,
+        halfSelector,
+        size: halfImage * scale,
+        x: (-x + halfSelector) * halfScale,
+        y: (-y + halfSelector) * halfScale
       }
     },
 
     selectorStyle () {
+      const { size, x, y } = this.translate
+
       return {
-        width: `${this.selector}px`,
-        height: `${this.selector}px`,
-        transform: `
-          translateX(${ this.coordinates.x - this.selector / 2}px)
-          translateY(${this.coordinates.y - this.selector / 2}px)
-        `
+        'width': `${size}px`,
+        'height': `${size}px`,
+        'transform': `translateX(${x}px) translateY(${y}px)`
       }
     }
   },
 
   methods: {
-    loadImage () {
-      this.$nextTick(() => {
-        const cropImage = this.$refs['preview']
+    init () {
+      if (!this.isLoaded) return
 
-        cropImage.src = require(`${this.src}`)
-      })
+      const { halfSelector } = this.translate
+
+      this.coordinates = {
+        x: halfSelector,
+        y: halfSelector,
+        width: this.size,
+        height: this.size
+      }
     },
 
-    update ({ clientX: x, clientY: y }) {
+    move (e) {
       if (!this.isDragging) return
 
+      this.update(e)
+    },
+
+    update (e) {
+      const { height } = this.coordinates
+      const { halfSelector } = this.translate
+
+      const x = e.layerX || this.coordinates.x
+      const y = e.layerY || this.coordinates.y
+
       this.coordinates = { ...this.coordinates, x, y }
+
+      // fix positioning if passing container
+      if (y <= this.selector / 2) this.coordinates.y = halfSelector // up
+      if (x <= this.selector / 2) this.coordinates.x = halfSelector // left
+      if (y >= height - this.selector / 2) this.coordinates.y = height - halfSelector // down
+      if (x >= height - this.selector / 2) this.coordinates.x = height - halfSelector // right
     },
 
     create () {
-      const preview = this.$refs.preview
+      const image = this.$refs.image
 
-      let ctx = document.getElementById('canvas').getContext('2d')
-      const { x, y } = this.coordinates
+      let canvas = document.getElementById('canvas')
+      let ctx = canvas.getContext('2d')
 
-      ctx.drawImage(preview, x, y, 250 * this.scale, 250 * this.scale)
-      console.log(ctx)
+      const { size, x, y } = this.translate
+
+      ctx.drawImage(image, x, y, size, size)
+
+      console.log(canvas.toDataURL())
     }
   }
 }
@@ -128,10 +181,13 @@ export default {
 
 <style lang="scss">
 * { box-sizing: border-box; }
-
 body { margin: 0; padding: 0; }
 
 .vue-croep {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
   & > .wrapper {
     position: relative;
     background: white;
@@ -139,32 +195,29 @@ body { margin: 0; padding: 0; }
     border: 1px solid black;
 
     & > .image {
+      z-index: 1;
       width: 500px;
       height: 500px;
+      display: block;
+      clip-path: url(#mask);
+      position: relative;
     }
 
-    & > .crop-selector {
-      cursor: crosshair;
-      border: 1px solid black;
-      background: rgba(white, .2);
-
+    & > .wrapper-selector {
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
       position: absolute;
+
+      // & > .selector:hover { cursor: pointer; }
     }
   }
 
-  & .preview-wrapper {
-    width: 250px;
-    height: 250px;
-    margin: 0 auto;
-    overflow: hidden;
-    background: white;
-    border: 1px solid black;
-
-    & > .preview { display: block; }
+  & > .range {
+    height: 10px;
+    width: 180px;
+    margin-top: 40px;
   }
 }
 </style>
