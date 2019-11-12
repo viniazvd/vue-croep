@@ -2,27 +2,32 @@
   <div id="app" class="vue-croep">
     <div
       class="wrapper"
-      @mousemove="move"
-      @mouseup="isDragging = false"
-      @mousedown.prevent="isDragging = true"
+      v-on="{
+        [events.move]: move,
+        [events.end]: () => isDragging = false
+      }"
     >
-      <img
-        v-show="isLoaded && !hasError"
+      <vue-coe-image
         ref="image"
         class="image"
+        fallback="https://i.ytimg.com/vi/Yt9t9e9gmmw/maxresdefault.jpg"
         :src="src"
-        @load="isLoaded = true"
+        :style="{
+          width: size + 'px',
+          height: size + 'px',
+          opacity: isDragging ? 1 : 0.7
+        }"
+        crossorigin="anonymous"
         @error="hasError = true"
+        @intersect="isLoaded = true"
+        v-on:[events.start].native.prevent="isDragging = true"
       />
 
-      <div v-if="hasError">ERROR</div>
-
       <svg
-        v-else
-        width="500"
-        height="500"
+        v-if="isLoaded && !hasError"
         fill="white"
         class="wrapper-selector"
+        :style="{ width: size + 'px', height: size + 'px' }"
       >
         <defs>
           <filter id="shadow">
@@ -46,40 +51,62 @@
 
         <image
           opacity=".5"
-          width="500px"
-          height="500px"
           preserveAspectRatio="none"
+          style="width: 100%; height: 100%"
           :href="src"
         />
       </svg>
     </div>
 
-    <input class="range" type="range" min="50" max="200" step="1" v-model="selector">
+    <input
+      step="1"
+      min="100"
+      type="range"
+      class="range"
+      :value="selector"
+      :max="coordinates.width"
+      @input="range"
+    >
 
-    <button @click="create">create</button>
+    <button @click="crop">crop</button>
 
-    <canvas id="canvas" width="250" height="250" style="border: 1px solid black" />
+    <canvas
+      id="canvas"
+      :width="coordinates.width / 2"
+      :height="coordinates.width / 2"
+      style="border: 1px solid black; border-radius: 50%"
+    />
   </div>
 </template>
 
 <script>
+import VueCoeImage from 'vue-coe-image'
+import 'vue-coe-image/dist/vue-coe-image.css'
+
+const isMobile = () => {
+  return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp2|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent)
+}
+
 export default {
   name: 'vue-croep',
+
+  components: { VueCoeImage },
 
   props: {
     size: {
       type: Number,
-      default: 500
+      default: 300
     },
 
     src: {
       type: String,
-      default: 'https://i0.wp.com/roteirodenoticias.com.br/wp-content/uploads/2018/04/mengo_atropela.jpg?fit=800%2C440'
+      default: 'https://pbs.twimg.com/profile_images/515195474848927744/wWahjxpP_400x400.jpeg'
     }
   },
 
   data () {
     return {
+      events: {},
       coordinates: {
         x: null,
         y: null,
@@ -95,7 +122,16 @@ export default {
 
   watch: {
     isLoaded: { handler: 'init' },
-    selector: { handler: 'update' }
+    selector: { handler: 'update' },
+    src: { handler: 'resetLoader' }
+  },
+
+  mounted () {
+    this.events = {
+      'end': isMobile() ? 'touchend' : 'mouseup',
+      'move': isMobile() ? 'touchmove' : 'mousemove',
+      'start': isMobile() ? 'touchstart' : 'mousedown'
+    }
   },
 
   computed: {
@@ -103,8 +139,8 @@ export default {
       const { x, y, width } = this.coordinates
       const scale = width / this.selector
 
-      const halfImage = 250
       const halfScale = scale / 2
+      const halfImage = this.size / 2
       const halfSelector = this.selector / 2
 
       return {
@@ -131,14 +167,29 @@ export default {
     init () {
       if (!this.isLoaded) return
 
-      const { halfSelector } = this.translate
-
       this.coordinates = {
-        x: halfSelector,
-        y: halfSelector,
+        x: this.size / 2,
+        y: this.size / 2,
         width: this.size,
         height: this.size
       }
+    },
+
+    range (λ) {
+      this.selector = +λ.target.value
+    },
+
+    resetLoader () {
+      this.isLoaded = false
+    },
+
+    getPosition (e, position) {
+      const axis = position.toUpperCase()
+
+      const desktopEvent = e['layer' + axis]
+      const mobileEvent = e.changedTouches && e.changedTouches[0]['client' + axis]
+
+      return mobileEvent || desktopEvent
     },
 
     move (e) {
@@ -151,8 +202,8 @@ export default {
       const { height } = this.coordinates
       const { halfSelector } = this.translate
 
-      const x = e.layerX || this.coordinates.x
-      const y = e.layerY || this.coordinates.y
+      const x = this.getPosition(e, 'x') || this.coordinates.x
+      const y = this.getPosition(e, 'y') || this.coordinates.y
 
       this.coordinates = { ...this.coordinates, x, y }
 
@@ -163,8 +214,13 @@ export default {
       if (x >= height - this.selector / 2) this.coordinates.x = height - halfSelector // right
     },
 
-    create () {
-      const image = this.$refs.image
+    crop () {
+      if (this.hasError) {
+        console.error('preview image was not loaded')
+        return
+      }
+
+      const image = this.$refs.image.$el.children.item(1)
 
       let canvas = document.getElementById('canvas')
       let ctx = canvas.getContext('2d')
@@ -173,7 +229,7 @@ export default {
 
       ctx.drawImage(image, x, y, size, size)
 
-      console.log(canvas.toDataURL())
+      this.$emit('cropped', canvas.toDataURL())
     }
   }
 }
@@ -182,6 +238,7 @@ export default {
 <style lang="scss">
 * { box-sizing: border-box; }
 body { margin: 0; padding: 0; }
+circle { cursor: pointer; }
 
 .vue-croep {
   display: flex;
@@ -196,11 +253,12 @@ body { margin: 0; padding: 0; }
 
     & > .image {
       z-index: 1;
-      width: 500px;
-      height: 500px;
+      cursor: grab;
       display: block;
       clip-path: url(#mask);
       position: relative;
+
+      & > .lazy-load-image { height: 100%; }
     }
 
     & > .wrapper-selector {
@@ -209,15 +267,37 @@ body { margin: 0; padding: 0; }
       right: 0;
       bottom: 0;
       position: absolute;
-
-      // & > .selector:hover { cursor: pointer; }
     }
   }
 
   & > .range {
-    height: 10px;
+    height: 8px;
     width: 180px;
     margin-top: 40px;
+    -webkit-appearance: none;
+  }
+
+  & > .range:focus { outline: none; }
+
+  // bar
+  & > .range::-webkit-slider-runnable-track {
+    height: 8px;
+    width: 180px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: rgba(#121E48, 0.1);
+  }
+
+  // ball
+  & > .range::-webkit-slider-thumb {
+    width: 14px;
+    height: 15px;
+    cursor: pointer;
+    margin-top: -4px;
+    border-radius: 15px;
+    background: #FFFFFF;
+    -webkit-appearance: none;
+    box-shadow: 0 0 11px 3px rgba(#121E48, 0.1);
   }
 }
 </style>
