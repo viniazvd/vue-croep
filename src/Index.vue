@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="vue-croep">
+  <div class="vue-croep">
     <div
       class="wrapper"
       v-on="{
@@ -23,52 +23,21 @@
         v-on:[events.start].native.prevent="isDragging = true"
       />
 
-      <svg
-        v-if="isLoaded && !hasError"
-        fill="white"
-        class="wrapper-selector"
-        :style="{ width: size + 'px', height: size + 'px' }"
-      >
-        <defs>
-          <filter id="shadow">
-            <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity=".5" />
-          </filter>
-
-          <clipPath id="mask">
-            <circle :r="selector / 2" :cx="coordinates.x" :cy="coordinates.y" />
-          </clipPath>
-        </defs>
-
-        <circle
-          class="selector"
-          stroke-width="2"
-          stroke="#FFFFFF"
-          filter="url(#shadow)"
-          :r="selector / 2"
-          :cx="coordinates.x"
-          :cy="coordinates.y"
-        />
-
-        <image
-          opacity=".5"
-          preserveAspectRatio="none"
-          style="width: 100%; height: 100%"
-          :href="src"
-        />
-      </svg>
+      <c-selector
+        :src="src"
+        :size="size"
+        :selector="selector"
+        :is-loaded="isLoaded"
+        :has-error="hasError"
+        :coordinates="coordinates"
+      />
     </div>
 
-    <input
-      step="1"
-      min="100"
-      type="range"
-      class="range"
-      :value="selector"
-      :max="coordinates.width"
-      @input="range"
-    >
-
-    <button @click="crop">crop</button>
+    <c-range
+      :selector="selector"
+      :max-range="coordinates.width"
+      @update:selector="range"
+    />
 
     <canvas
       id="canvas"
@@ -83,6 +52,9 @@
 import VueCoeImage from 'vue-coe-image'
 import 'vue-coe-image/dist/vue-coe-image.css'
 
+import CRange from './components/CRange.vue'
+import CSelector from './components/CSelector.vue'
+
 const isMobile = () => {
   return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp2|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent)
 }
@@ -90,7 +62,7 @@ const isMobile = () => {
 export default {
   name: 'vue-croep',
 
-  components: { VueCoeImage },
+  components: { VueCoeImage, CRange, CSelector },
 
   props: {
     size: {
@@ -238,7 +210,6 @@ export default {
 <style lang="scss">
 * { box-sizing: border-box; }
 body { margin: 0; padding: 0; }
-circle { cursor: pointer; }
 
 .vue-croep {
   display: flex;
@@ -260,44 +231,6 @@ circle { cursor: pointer; }
 
       & > .lazy-load-image { height: 100%; }
     }
-
-    & > .wrapper-selector {
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      position: absolute;
-    }
-  }
-
-  & > .range {
-    height: 8px;
-    width: 180px;
-    margin-top: 40px;
-    -webkit-appearance: none;
-  }
-
-  & > .range:focus { outline: none; }
-
-  // bar
-  & > .range::-webkit-slider-runnable-track {
-    height: 8px;
-    width: 180px;
-    cursor: pointer;
-    border-radius: 25px;
-    background-color: rgba(#121E48, 0.1);
-  }
-
-  // ball
-  & > .range::-webkit-slider-thumb {
-    width: 14px;
-    height: 15px;
-    cursor: pointer;
-    margin-top: -4px;
-    border-radius: 15px;
-    background: #FFFFFF;
-    -webkit-appearance: none;
-    box-shadow: 0 0 11px 3px rgba(#121E48, 0.1);
   }
 }
 </style>
