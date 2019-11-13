@@ -1,26 +1,61 @@
-# vue-croep
+<h1 align="center">vue-croep ✅</h1>
 
-## Project setup
-```
-yarn install
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/npm/l/vuelidation.svg" alt="License" target="_blank"></a>
+</p>
+
+<br>
+
+<p align="center">
+  ✨ <a href="https://viniazvd.github.io/vue-croep/">Example</a>✨
+</p>
+
+<br>
+
+## Install
+`yarn add vue-croep` or `npm install vue-croep`
+
+**Example**
+```vue
+<template>
+  <div>
+    <vue-croep ref="croep" />
+
+    <button @click="crop">crop</button>
+  </div>
+</template>
+
+<script>
+import VueCroep from '../src/Index.vue'
+
+export default {
+  name: 'example',
+
+  components: { VueCroep },
+
+  methods: {
+    crop () {
+      this.$refs.croep.crop()
+    }
+  }
+}
+</script>
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+## Props
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+Name                |   type   |             default          | About
+-----               | -------  | ---------------------------- | ------
+size                |  Number  |            `300`             | container size
+src                 |  String  |        `mengão picture`      | image to crop
 
-### Run your tests
-```
-yarn run test
-```
+## Event
 
-### Lints and fixes files
-```
-yarn run lint
-```
+Name       | About
+-----      | -----
+cropped    | return base64 of cropped image
+
+## Contributor
+- https://github.com/Giseudo :star: 
+
+**Made in:** @convenia
