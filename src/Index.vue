@@ -98,7 +98,7 @@ export default {
     src: { handler: 'resetLoader' }
   },
 
-  mounted () {
+  created () {
     this.events = {
       'end': isMobile() ? 'touchend' : 'mouseup',
       'move': isMobile() ? 'touchmove' : 'mousemove',
