@@ -26,7 +26,8 @@
 </template>
 
 <script>
-import VueCroep from '../src/Index.vue'
+import VueCroep from 'vue-croep'
+import 'vue-croep/dist/vue-croep.css'
 
 export default {
   name: 'example',
