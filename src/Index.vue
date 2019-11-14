@@ -220,7 +220,6 @@ body { margin: 0; padding: 0; }
     position: relative;
     background: white;
     display: inline-block;
-    border: 1px solid black;
 
     & > .image {
       z-index: 1;

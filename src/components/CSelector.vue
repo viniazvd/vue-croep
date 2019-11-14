@@ -56,5 +56,6 @@ export default {
   right: 0;
   bottom: 0;
   position: absolute;
+  border-radius: 5px;
 }
 </style>
