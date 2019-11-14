@@ -37,7 +37,7 @@ export default {
   width: 180px;
   cursor: pointer;
   border-radius: 25px;
-  background-color: rgba(#121E48, 0.1);
+  background-color: rgba(#121E48, 0.2);
 }
 
 // ball
