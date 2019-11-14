@@ -56,7 +56,8 @@ Name       | About
 -----      | -----
 cropped    | return base64 of cropped image
 
-## master contributor:
+## contributors:
 - https://github.com/Giseudo :star: 
+- https://github.com/kauanslr 
 
 **Made in:** @convenia
