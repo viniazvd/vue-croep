@@ -729,7 +729,7 @@ const isMobile = () => {
     }
   },
 
-  beforeCreate() {
+  created() {
     this.events = {
       'end': isMobile() ? 'touchend' : 'mouseup',
       'move': isMobile() ? 'touchmove' : 'mousemove',
