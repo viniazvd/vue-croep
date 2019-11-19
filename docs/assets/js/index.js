@@ -193,7 +193,9 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("vue-croep", { ref: "croep" }),
+      _c("input", { attrs: { type: "file" }, on: { change: _vm.getBase64 } }),
+      _vm._v(" "),
+      _c("vue-croep", { ref: "croep", attrs: { src: _vm.src } }),
       _vm._v(" "),
       _c("button", { on: { click: _vm.crop } }, [_vm._v("crop")])
     ],
@@ -269,22 +271,16 @@ var render = function() {
             ])
           }),
           _vm._v(" "),
-          _c("c-selector", {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.isLoaded && !_vm.hasError,
-                expression: "isLoaded && !hasError"
-              }
-            ],
-            attrs: {
-              src: _vm.src,
-              size: _vm.size,
-              selector: _vm.selector,
-              coordinates: _vm.coordinates
-            }
-          })
+          _vm.isLoaded && !_vm.hasError
+            ? _c("c-selector", {
+                attrs: {
+                  src: _vm.src,
+                  size: _vm.size,
+                  selector: _vm.selector,
+                  coordinates: _vm.coordinates
+                }
+              })
+            : _vm._e()
         ],
         1
       ),
@@ -602,13 +598,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'example',
   components: {
     VueCroep: _src_Index_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
+
+  data() {
+    return {
+      src: ''
+    };
+  },
+
   methods: {
+    getBase64(event) {
+      const file = event.target.files[0];
+      let reader = new FileReader();
+      reader.readAsDataURL(file);
+
+      reader.onload = () => this.src = reader.result;
+    },
+
     crop() {
       this.$refs.croep.crop();
     }
@@ -795,7 +808,7 @@ const isMobile = () => {
     },
 
     resetLoader() {
-      this.isLoaded = false;
+      this.hasError = false;
     },
 
     getPosition(e, position) {
