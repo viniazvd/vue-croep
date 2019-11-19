@@ -24,7 +24,7 @@
       />
 
       <c-selector
-        v-show="isLoaded && !hasError"
+        v-if="isLoaded && !hasError"
         :src="src"
         :size="size"
         :selector="selector"
@@ -151,7 +151,7 @@ export default {
     },
 
     resetLoader () {
-      this.isLoaded = false
+      this.hasError = false
     },
 
     getPosition (e, position) {
