@@ -24,11 +24,10 @@
       />
 
       <c-selector
+        v-if="isLoaded && !hasError"
         :src="src"
         :size="size"
         :selector="selector"
-        :is-loaded="isLoaded"
-        :has-error="hasError"
         :coordinates="coordinates"
       />
     </div>
