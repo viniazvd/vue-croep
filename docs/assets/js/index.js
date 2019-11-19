@@ -405,8 +405,13 @@ var render = function() {
           }),
           _vm._v(" "),
           _c("image", {
-            staticStyle: { width: "100%", height: "100%" },
-            attrs: { opacity: ".5", preserveAspectRatio: "none", href: _vm.src }
+            attrs: {
+              opacity: ".5",
+              width: "100%",
+              height: "100%",
+              preserveAspectRatio: "none",
+              href: _vm.src
+            }
           })
         ]
       )
@@ -443,7 +448,7 @@ exports.push([module.i, ".filter-defs-svg { display: none; }\n\n.lazy-load-image
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "* {\n  box-sizing: border-box;\n}\nbody {\n  margin: 0;\n  padding: 0;\n}\n.vue-croep {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.vue-croep > .wrapper {\n    position: relative;\n    background: white;\n    display: inline-block;\n}\n.vue-croep > .wrapper > .image {\n      z-index: 1;\n      cursor: grab;\n      display: block;\n      clip-path: url(#mask);\n      position: relative;\n}\n.vue-croep > .wrapper > .image > .lazy-load-image {\n        height: 100%;\n}\n", "",{"version":3,"sources":["/Users/convenia/Desktop/convenia-spa/vue-croep/src/Index.vue"],"names":[],"mappings":"AAkNA;EAAI,sBAAsB;AAAA;AAC1B;EAAO,SAAS;EAAE,UAAU;AAAA;AAE5B;EACE,aAAa;EACb,mBAAmB;EACnB,sBAAsB;AAAA;AAHxB;IAMI,kBAAkB;IAClB,iBAAiB;IACjB,qBAAqB;AAAA;AARzB;MAWM,UAAU;MACV,YAAY;MACZ,cAAc;MACd,qBAAqB;MACrB,kBAAkB;AAAA;AAfxB;QAiB6B,YAAY;AAAA","file":"Index.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n* { box-sizing: border-box; }\nbody { margin: 0; padding: 0; }\n\n.vue-croep {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n\n  & > .wrapper {\n    position: relative;\n    background: white;\n    display: inline-block;\n\n    & > .image {\n      z-index: 1;\n      cursor: grab;\n      display: block;\n      clip-path: url(#mask);\n      position: relative;\n\n      & > .lazy-load-image { height: 100%; }\n    }\n  }\n}\n"]}]);
+exports.push([module.i, "* {\n  box-sizing: border-box;\n}\nbody {\n  margin: 0;\n  padding: 0;\n}\n.vue-croep {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.vue-croep > .wrapper {\n    position: relative;\n    background: white;\n    display: inline-block;\n}\n.vue-croep > .wrapper > .image {\n      z-index: 1;\n      cursor: grab;\n      display: block;\n      position: relative;\n      clip-path: url(#mask);\n      -webkit-clip-path: url(#mask);\n}\n.vue-croep > .wrapper > .image > .lazy-load-image {\n        height: 100%;\n        will-change: auto;\n}\n", "",{"version":3,"sources":["/Users/convenia/Desktop/convenia-spa/vue-croep/src/Index.vue"],"names":[],"mappings":"AAkNA;EAAI,sBAAsB;AAAA;AAC1B;EAAO,SAAS;EAAE,UAAU;AAAA;AAE5B;EACE,aAAa;EACb,mBAAmB;EACnB,sBAAsB;AAAA;AAHxB;IAMI,kBAAkB;IAClB,iBAAiB;IACjB,qBAAqB;AAAA;AARzB;MAWM,UAAU;MACV,YAAY;MACZ,cAAc;MACd,kBAAkB;MAClB,qBAAqB;MACrB,6BAA6B;AAAA;AAhBnC;QAmBQ,YAAY;QACZ,iBAAiB;AAAA","file":"Index.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n* { box-sizing: border-box; }\nbody { margin: 0; padding: 0; }\n\n.vue-croep {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n\n  & > .wrapper {\n    position: relative;\n    background: white;\n    display: inline-block;\n\n    & > .image {\n      z-index: 1;\n      cursor: grab;\n      display: block;\n      position: relative;\n      clip-path: url(#mask);\n      -webkit-clip-path: url(#mask);\n\n      & > .lazy-load-image {\n        height: 100%;\n        will-change: auto;\n      }\n    }\n  }\n}\n"]}]);
 
 
 
@@ -473,7 +478,7 @@ exports.push([module.i, ".range {\n  height: 8px;\n  width: 180px;\n  margin-top
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".wrapper-selector {\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  position: absolute;\n  border-radius: 5px;\n}\n", "",{"version":3,"sources":["/Users/convenia/Desktop/convenia-spa/vue-croep/src/components/CSelector.vue"],"names":[],"mappings":"AAoDA;EACE,MAAM;EACN,OAAO;EACP,QAAQ;EACR,SAAS;EACT,kBAAkB;EAClB,kBAAkB;AAAA","file":"CSelector.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.wrapper-selector {\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  position: absolute;\n  border-radius: 5px;\n}\n"]}]);
+exports.push([module.i, ".wrapper-selector {\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  position: absolute;\n  border-radius: 5px;\n}\n", "",{"version":3,"sources":["/Users/convenia/Desktop/convenia-spa/vue-croep/src/components/CSelector.vue"],"names":[],"mappings":"AAqDA;EACE,MAAM;EACN,OAAO;EACP,QAAQ;EACR,SAAS;EACT,kBAAkB;EAClB,kBAAkB;AAAA","file":"CSelector.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.wrapper-selector {\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  position: absolute;\n  border-radius: 5px;\n}\n"]}]);
 
 
 
@@ -888,6 +893,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
