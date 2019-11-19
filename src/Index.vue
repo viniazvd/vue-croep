@@ -230,6 +230,7 @@ body { margin: 0; padding: 0; }
 
       & > .lazy-load-image {
         height: 100%;
+        filter: none;
         will-change: auto;
       }
     }
