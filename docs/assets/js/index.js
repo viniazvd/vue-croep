@@ -268,7 +268,7 @@ var render = function() {
               }
             ])
           }),
-          _vm._v(" "),
+          _vm._v("\n\n    isLoaded: " + _vm._s(_vm.isLoaded) + "\n    "),
           _vm.isLoaded && !_vm.hasError
             ? _c("c-selector", {
                 attrs: {
@@ -446,7 +446,7 @@ exports.push([module.i, ".filter-defs-svg { display: none; }\n\n.lazy-load-image
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "* {\n  box-sizing: border-box;\n}\nbody {\n  margin: 0;\n  padding: 0;\n}\n.vue-croep {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.vue-croep > .wrapper {\n    position: relative;\n    background: white;\n    display: inline-block;\n}\n.vue-croep > .wrapper > .image {\n      z-index: 1;\n      cursor: grab;\n      display: block;\n      position: relative;\n      clip-path: url(#mask);\n      -webkit-clip-path: url(#mask);\n}\n.vue-croep > .wrapper > .image > .lazy-load-image {\n        height: 100%;\n        will-change: auto;\n}\n", "",{"version":3,"sources":["/Users/convenia/Desktop/convenia-spa/vue-croep/src/Index.vue"],"names":[],"mappings":"AAiNA;EAAI,sBAAsB;AAAA;AAC1B;EAAO,SAAS;EAAE,UAAU;AAAA;AAE5B;EACE,aAAa;EACb,mBAAmB;EACnB,sBAAsB;AAAA;AAHxB;IAMI,kBAAkB;IAClB,iBAAiB;IACjB,qBAAqB;AAAA;AARzB;MAWM,UAAU;MACV,YAAY;MACZ,cAAc;MACd,kBAAkB;MAClB,qBAAqB;MACrB,6BAA6B;AAAA;AAhBnC;QAmBQ,YAAY;QACZ,iBAAiB;AAAA","file":"Index.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n* { box-sizing: border-box; }\nbody { margin: 0; padding: 0; }\n\n.vue-croep {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n\n  & > .wrapper {\n    position: relative;\n    background: white;\n    display: inline-block;\n\n    & > .image {\n      z-index: 1;\n      cursor: grab;\n      display: block;\n      position: relative;\n      clip-path: url(#mask);\n      -webkit-clip-path: url(#mask);\n\n      & > .lazy-load-image {\n        height: 100%;\n        will-change: auto;\n      }\n    }\n  }\n}\n"]}]);
+exports.push([module.i, "* {\n  box-sizing: border-box;\n}\nbody {\n  margin: 0;\n  padding: 0;\n}\n.vue-croep {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.vue-croep > .wrapper {\n    position: relative;\n    background: white;\n    display: inline-block;\n}\n.vue-croep > .wrapper > .image {\n      z-index: 1;\n      cursor: grab;\n      display: block;\n      position: relative;\n      clip-path: url(#mask);\n      -webkit-clip-path: url(#mask);\n}\n.vue-croep > .wrapper > .image > .lazy-load-image {\n        height: 100%;\n        will-change: auto;\n}\n", "",{"version":3,"sources":["/Users/convenia/Desktop/convenia-spa/vue-croep/src/Index.vue"],"names":[],"mappings":"AAkNA;EAAI,sBAAsB;AAAA;AAC1B;EAAO,SAAS;EAAE,UAAU;AAAA;AAE5B;EACE,aAAa;EACb,mBAAmB;EACnB,sBAAsB;AAAA;AAHxB;IAMI,kBAAkB;IAClB,iBAAiB;IACjB,qBAAqB;AAAA;AARzB;MAWM,UAAU;MACV,YAAY;MACZ,cAAc;MACd,kBAAkB;MAClB,qBAAqB;MACrB,6BAA6B;AAAA;AAhBnC;QAmBQ,YAAY;QACZ,iBAAiB;AAAA","file":"Index.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n* { box-sizing: border-box; }\nbody { margin: 0; padding: 0; }\n\n.vue-croep {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n\n  & > .wrapper {\n    position: relative;\n    background: white;\n    display: inline-block;\n\n    & > .image {\n      z-index: 1;\n      cursor: grab;\n      display: block;\n      position: relative;\n      clip-path: url(#mask);\n      -webkit-clip-path: url(#mask);\n\n      & > .lazy-load-image {\n        height: 100%;\n        will-change: auto;\n      }\n    }\n  }\n}\n"]}]);
 
 
 
@@ -627,6 +627,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_coe_image_dist_vue_coe_image_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_coe_image_dist_vue_coe_image_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_CRange_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/CRange.vue */ "./src/components/CRange.vue");
 /* harmony import */ var _components_CSelector_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/CSelector.vue */ "./src/components/CSelector.vue");
+//
 //
 //
 //
