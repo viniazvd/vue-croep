@@ -24,7 +24,7 @@
       />
 
       <c-selector
-        v-if="isLoaded && !hasError"
+        v-show="isLoaded && !hasError"
         :src="src"
         :size="size"
         :selector="selector"
