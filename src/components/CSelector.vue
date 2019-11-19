@@ -1,6 +1,5 @@
 <template>
   <svg
-    v-if="isLoaded && !hasError"
     fill="white"
     class="wrapper-selector"
     :style="{ width: size + 'px', height: size + 'px' }"
@@ -43,8 +42,6 @@ export default {
     src: String,
     size: Number,
     selector: Number,
-    isLoaded: Boolean,
-    hasError: Boolean,
     coordinates: Object
   }
 }
