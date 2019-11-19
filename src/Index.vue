@@ -225,10 +225,14 @@ body { margin: 0; padding: 0; }
       z-index: 1;
       cursor: grab;
       display: block;
-      clip-path: url(#mask);
       position: relative;
+      clip-path: url(#mask);
+      -webkit-clip-path: url(#mask);
 
-      & > .lazy-load-image { height: 100%; }
+      & > .lazy-load-image {
+        height: 100%;
+        will-change: auto;
+      }
     }
   }
 }

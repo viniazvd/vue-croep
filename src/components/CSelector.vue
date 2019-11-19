@@ -27,8 +27,9 @@
 
     <image
       opacity=".5"
+      width="100%"
+      height="100%"
       preserveAspectRatio="none"
-      style="width: 100%; height: 100%"
       :href="src"
     />
   </svg>
