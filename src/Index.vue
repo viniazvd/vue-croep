@@ -157,7 +157,7 @@ export default {
     getPosition (e, position) {
       const axis = position.toUpperCase()
 
-      const desktopEvent = e['layer' + axis]
+      const desktopEvent = e['offset' + axis]
       const mobileEvent = e.changedTouches && e.changedTouches[0]['client' + axis]
 
       return mobileEvent || desktopEvent
