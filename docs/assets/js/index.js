@@ -97,7 +97,9 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_vue_vue_type_template_id_1ebcac49___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.vue?vue&type=template&id=1ebcac49& */ "./examples/App.vue?vue&type=template&id=1ebcac49&");
 /* harmony import */ var _App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.vue?vue&type=script&lang=js& */ "./examples/App.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _App_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App.vue?vue&type=style&index=0&lang=scss& */ "./examples/App.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -105,7 +107,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _App_vue_vue_type_template_id_1ebcac49___WEBPACK_IMPORTED_MODULE_0__["render"],
   _App_vue_vue_type_template_id_1ebcac49___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -134,6 +136,22 @@ component.options.__file = "examples/App.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_poi_lib_webpack_babel_loader_js_ref_1_0_node_modules_cache_loader_dist_cjs_js_ref_2_0_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../node_modules/poi/lib/webpack/babel-loader.js??ref--1-0!../node_modules/cache-loader/dist/cjs.js??ref--2-0!../node_modules/vue-loader/lib??vue-loader-options!./App.vue?vue&type=script&lang=js& */ "./node_modules/poi/lib/webpack/babel-loader.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./examples/App.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_poi_lib_webpack_babel_loader_js_ref_1_0_node_modules_cache_loader_dist_cjs_js_ref_2_0_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./examples/App.vue?vue&type=style&index=0&lang=scss&":
+/*!************************************************************!*\
+  !*** ./examples/App.vue?vue&type=style&index=0&lang=scss& ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_ref_5_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_2_0_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../node_modules/vue-style-loader??ref--5-oneOf-1-0!../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-1-1!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/sass-loader/dist/cjs.js??ref--5-oneOf-1-2!../node_modules/cache-loader/dist/cjs.js??ref--2-0!../node_modules/vue-loader/lib??vue-loader-options!./App.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/vue-style-loader/index.js?!./node_modules/css-loader/dist/cjs.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./examples/App.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_ref_5_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_2_0_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_ref_5_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_2_0_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_ref_5_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_2_0_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_ref_5_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_2_0_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_sass_loader_dist_cjs_js_ref_5_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_2_0_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -192,10 +210,23 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "app" },
     [
       _c("input", { attrs: { type: "file" }, on: { change: _vm.getBase64 } }),
       _vm._v(" "),
-      _c("vue-croep", { ref: "croep", attrs: { src: _vm.src } }),
+      _c("vue-croep", {
+        ref: "croep",
+        attrs: { src: _vm.src },
+        on: {
+          cropped: function($event) {
+            _vm.image = $event
+          }
+        }
+      }),
+      _vm._v(" "),
+      _vm.image
+        ? _c("img", { staticClass: "image", attrs: { src: _vm.image } })
+        : _vm._e(),
       _vm._v(" "),
       _c("button", { on: { click: _vm.crop } }, [_vm._v("crop")])
     ],
@@ -241,28 +272,15 @@ var render = function() {
           _obj)
         ),
         [
-          _c("vue-coe-image", {
+          _c("img", {
             ref: "image",
             staticClass: "image",
             style: {
-              width: _vm.size + "px",
-              height: _vm.size + "px",
+              maxHeight: _vm.size + "px",
               opacity: _vm.isDragging ? 1 : 0.7
             },
-            attrs: {
-              fallback: "https://i.ytimg.com/vi/Yt9t9e9gmmw/maxresdefault.jpg",
-              src: _vm.src,
-              crossorigin: "anonymous"
-            },
-            on: {
-              error: function($event) {
-                _vm.hasError = true
-              },
-              intersect: function($event) {
-                _vm.isLoaded = true
-              }
-            },
-            nativeOn: _vm._d({}, [
+            attrs: { src: _vm.src, crossorigin: "anonymous" },
+            on: _vm._d({ load: _vm.onImageLoad }, [
               _vm.events.start,
               function($event) {
                 $event.preventDefault()
@@ -275,7 +293,6 @@ var render = function() {
             ? _c("c-selector", {
                 attrs: {
                   src: _vm.src,
-                  size: _vm.size,
                   selector: _vm.selector,
                   coordinates: _vm.coordinates
                 }
@@ -286,17 +303,8 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("c-range", {
-        attrs: { selector: _vm.selector, "max-range": _vm.coordinates.width },
+        attrs: { selector: _vm.selector, "max-range": _vm.orientedSize },
         on: { "update:selector": _vm.range }
-      }),
-      _vm._v(" "),
-      _c("canvas", {
-        staticStyle: { border: "1px solid black", "border-radius": "50%" },
-        attrs: {
-          id: "canvas",
-          width: _vm.coordinates.width / 2,
-          height: _vm.coordinates.width / 2
-        }
       })
     ],
     1
@@ -324,16 +332,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("input", {
-    staticClass: "range",
-    attrs: { step: "1", min: "100", type: "range", max: _vm.maxRange },
-    domProps: { value: _vm.selector },
-    on: {
-      input: function(range) {
-        return _vm.$emit("update:selector", range)
+  return _c("div", { staticClass: "range" }, [
+    _c("span", { staticClass: "decrease" }),
+    _vm._v(" "),
+    _c("input", {
+      staticClass: "input",
+      attrs: { step: "1", min: "100", type: "range", max: _vm.maxRange },
+      domProps: { value: _vm.selector },
+      on: {
+        input: function(range) {
+          return _vm.$emit("update:selector", range)
+        }
       }
-    }
-  })
+    }),
+    _vm._v(" "),
+    _c("span", { staticClass: "increase" })
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -359,11 +373,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "svg",
-    {
-      staticClass: "wrapper-selector",
-      style: { width: _vm.size + "px", height: _vm.size + "px" },
-      attrs: { fill: "white" }
-    },
+    { staticClass: "wrapper-selector", attrs: { fill: "white" } },
     [
       _c("defs", [
         _c(
@@ -439,6 +449,21 @@ exports.push([module.i, ".filter-defs-svg { display: none; }\n\n.lazy-load-image
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./examples/App.vue?vue&type=style&index=0&lang=scss&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js??ref--5-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--2-0!./node_modules/vue-loader/lib??vue-loader-options!./examples/App.vue?vue&type=style&index=0&lang=scss& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
+// Module
+exports.push([module.i, ".app > .image {\n  border-radius: 999px;\n}\n", "",{"version":3,"sources":["/Users/convenia/Code/vue-croep/examples/App.vue"],"names":[],"mappings":"AA4CA;EAEI,oBAAoB;AAAA","file":"App.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.app {\n  & > .image {\n    border-radius: 999px;\n  }\n}\n"]}]);
+
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./src/Index.vue?vue&type=style&index=0&lang=scss&":
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ref--5-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js??ref--5-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--2-0!./node_modules/vue-loader/lib??vue-loader-options!./src/Index.vue?vue&type=style&index=0&lang=scss& ***!
@@ -448,7 +473,7 @@ exports.push([module.i, ".filter-defs-svg { display: none; }\n\n.lazy-load-image
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "* {\n  box-sizing: border-box;\n}\nbody {\n  margin: 0;\n  padding: 0;\n}\n.vue-croep {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.vue-croep > .wrapper {\n    position: relative;\n    background: white;\n    display: inline-block;\n}\n.vue-croep > .wrapper > .image {\n      z-index: 1;\n      cursor: grab;\n      display: block;\n      position: relative;\n      clip-path: url(#mask);\n      -webkit-clip-path: url(#mask);\n}\n.vue-croep > .wrapper > .image > .lazy-load-image {\n        height: 100%;\n        filter: none;\n        will-change: auto;\n}\n", "",{"version":3,"sources":["/Users/convenia/Code/vue-croep/src/Index.vue"],"names":[],"mappings":"AAiNA;EAAI,sBAAsB;AAAA;AAC1B;EAAO,SAAS;EAAE,UAAU;AAAA;AAE5B;EACE,aAAa;EACb,mBAAmB;EACnB,sBAAsB;AAAA;AAHxB;IAMI,kBAAkB;IAClB,iBAAiB;IACjB,qBAAqB;AAAA;AARzB;MAWM,UAAU;MACV,YAAY;MACZ,cAAc;MACd,kBAAkB;MAClB,qBAAqB;MACrB,6BAA6B;AAAA;AAhBnC;QAmBQ,YAAY;QACZ,YAAY;QACZ,iBAAiB;AAAA","file":"Index.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n* { box-sizing: border-box; }\nbody { margin: 0; padding: 0; }\n\n.vue-croep {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n\n  & > .wrapper {\n    position: relative;\n    background: white;\n    display: inline-block;\n\n    & > .image {\n      z-index: 1;\n      cursor: grab;\n      display: block;\n      position: relative;\n      clip-path: url(#mask);\n      -webkit-clip-path: url(#mask);\n\n      & > .lazy-load-image {\n        height: 100%;\n        filter: none;\n        will-change: auto;\n      }\n    }\n  }\n}\n"]}]);
+exports.push([module.i, "* {\n  box-sizing: border-box;\n}\nbody {\n  margin: 0;\n  padding: 0;\n}\n.vue-croep {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.vue-croep > .wrapper {\n    position: relative;\n    background: white;\n    display: inline-block;\n}\n.vue-croep > .wrapper > .image {\n      z-index: 1;\n      height: auto;\n      max-width: 100%;\n      cursor: grab;\n      display: block;\n      position: relative;\n      clip-path: url(#mask);\n      -webkit-clip-path: url(#mask);\n}\n", "",{"version":3,"sources":["/Users/convenia/Code/vue-croep/src/Index.vue"],"names":[],"mappings":"AA+PA;EAAI,sBAAsB;AAAA;AAC1B;EAAO,SAAS;EAAE,UAAU;AAAA;AAE5B;EACE,aAAa;EACb,mBAAmB;EACnB,sBAAsB;AAAA;AAHxB;IAMI,kBAAkB;IAClB,iBAAiB;IACjB,qBAAqB;AAAA;AARzB;MAWM,UAAU;MACV,YAAY;MACZ,eAAe;MACf,YAAY;MACZ,cAAc;MACd,kBAAkB;MAClB,qBAAqB;MACrB,6BAA6B;AAAA","file":"Index.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n* { box-sizing: border-box; }\nbody { margin: 0; padding: 0; }\n\n.vue-croep {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n\n  & > .wrapper {\n    position: relative;\n    background: white;\n    display: inline-block;\n\n    & > .image {\n      z-index: 1;\n      height: auto;\n      max-width: 100%;\n      cursor: grab;\n      display: block;\n      position: relative;\n      clip-path: url(#mask);\n      -webkit-clip-path: url(#mask);\n    }\n  }\n}\n"]}]);
 
 
 
@@ -463,7 +488,7 @@ exports.push([module.i, "* {\n  box-sizing: border-box;\n}\nbody {\n  margin: 0;
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".range {\n  height: 8px;\n  width: 180px;\n  margin-top: 40px;\n  -webkit-appearance: none;\n}\n.range:focus {\n  outline: none;\n}\n.range::-webkit-slider-runnable-track {\n  height: 8px;\n  width: 180px;\n  cursor: pointer;\n  border-radius: 25px;\n  background-color: rgba(18, 30, 72, 0.2);\n}\n.range::-webkit-slider-thumb {\n  width: 14px;\n  height: 15px;\n  cursor: pointer;\n  margin-top: -4px;\n  border-radius: 15px;\n  background: #FFFFFF;\n  -webkit-appearance: none;\n  box-shadow: 0 0 11px 3px rgba(18, 30, 72, 0.1);\n}\n", "",{"version":3,"sources":["/Users/convenia/Code/vue-croep/src/components/CRange.vue"],"names":[],"mappings":"AAwBA;EACE,WAAW;EACX,YAAY;EACZ,gBAAgB;EAChB,wBAAwB;AAAA;AAG1B;EAAe,aAAa;AAAA;AAG5B;EACE,WAAW;EACX,YAAY;EACZ,eAAe;EACf,mBAAmB;EACnB,uCAA8B;AAAA;AAIhC;EACE,WAAW;EACX,YAAY;EACZ,eAAe;EACf,gBAAgB;EAChB,mBAAmB;EACnB,mBAAmB;EACnB,wBAAwB;EACxB,8CAAqC;AAAA","file":"CRange.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.range {\n  height: 8px;\n  width: 180px;\n  margin-top: 40px;\n  -webkit-appearance: none;\n}\n\n.range:focus { outline: none; }\n\n// bar\n.range::-webkit-slider-runnable-track {\n  height: 8px;\n  width: 180px;\n  cursor: pointer;\n  border-radius: 25px;\n  background-color: rgba(#121E48, 0.2);\n}\n\n// ball\n.range::-webkit-slider-thumb {\n  width: 14px;\n  height: 15px;\n  cursor: pointer;\n  margin-top: -4px;\n  border-radius: 15px;\n  background: #FFFFFF;\n  -webkit-appearance: none;\n  box-shadow: 0 0 11px 3px rgba(#121E48, 0.1);\n}\n"]}]);
+exports.push([module.i, ".range {\n  margin-top: 40px;\n  display: flex;\n  align-items: center;\n}\n.range > .input {\n    height: 8px;\n    width: 180px;\n    -webkit-appearance: none;\n}\n.range > .input:focus {\n      outline: none;\n}\n.range > .input::-webkit-slider-runnable-track {\n      height: 8px;\n      width: 180px;\n      cursor: pointer;\n      border-radius: 25px;\n      background-color: rgba(18, 30, 72, 0.1);\n}\n.range > .input::-webkit-slider-thumb {\n      width: 14px;\n      height: 14px;\n      cursor: pointer;\n      margin-top: -4px;\n      border-radius: 15px;\n      background: #FFFFFF;\n      box-shadow: 0 0 11px 3px rgba(18, 30, 72, 0.1);\n      -webkit-appearance: none;\n}\n.range > .increase,\n  .range > .decrease {\n    width: 25px;\n    height: 25px;\n    border-radius: 25px;\n    display: inline-block;\n    background-color: rgba(18, 30, 72, 0.1);\n    margin: 0 15px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    box-shadow: 0 4px 8px 3px rgba(18, 30, 72, 0.03);\n}\n.range > .decrease:before {\n    content: \"\";\n    width: 10px;\n    height: 1px;\n    background: white;\n    display: inline-block;\n}\n.range > .increase:before, .range > .increase:after {\n    content: \"\";\n    width: 10px;\n    height: 1px;\n    background: white;\n    display: inline-block;\n}\n.range > .increase:after {\n    position: absolute;\n    transform: rotate(90deg);\n}\n", "",{"version":3,"sources":["/Users/convenia/Code/vue-croep/src/components/CRange.vue"],"names":[],"mappings":"AA8BA;EACE,gBAAgB;EAChB,aAAa;EACb,mBAAmB;AAAA;AAHrB;IAMI,WAAW;IACX,YAAY;IACZ,wBAAwB;AAAA;AAR5B;MAUc,aAAa;AAAA;AAV3B;MAcM,WAAW;MACX,YAAY;MACZ,eAAe;MACf,mBAAmB;MACnB,uCAA8B;AAAA;AAlBpC;MAuBM,WAAW;MACX,YAAY;MACZ,eAAe;MACf,gBAAgB;MAChB,mBAAmB;MACnB,mBAAmB;MACnB,8CAAqC;MACrC,wBAAwB;AAAA;AA9B9B;;IAoCI,WAAW;IACX,YAAY;IACZ,mBAAmB;IACnB,qBAAqB;IACrB,uCAA8B;IAC9B,cAAc;IACd,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,gDAAsC;AAAA;AA7C1C;IAkDM,WAAW;IACX,WAAW;IACX,WAAW;IACX,iBAAiB;IACjB,qBAAqB;AAAA;AAtD3B;IA6DM,WAAW;IACX,WAAW;IACX,WAAW;IACX,iBAAiB;IACjB,qBAAqB;AAAA;AAjE3B;IAoEM,kBAAkB;IAClB,wBAAwB;AAAA","file":"CRange.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.range {\n  margin-top: 40px;\n  display: flex;\n  align-items: center;\n\n  & > .input {\n    height: 8px;\n    width: 180px;\n    -webkit-appearance: none;\n\n    &:focus { outline: none; }\n\n    // bar\n    &::-webkit-slider-runnable-track {\n      height: 8px;\n      width: 180px;\n      cursor: pointer;\n      border-radius: 25px;\n      background-color: rgba(#121E48, 0.1);\n    }\n\n    // ball\n    &::-webkit-slider-thumb {\n      width: 14px;\n      height: 14px;\n      cursor: pointer;\n      margin-top: -4px;\n      border-radius: 15px;\n      background: #FFFFFF;\n      box-shadow: 0 0 11px 3px rgba(#121E48, 0.1);\n      -webkit-appearance: none;\n    }\n  }\n\n  & > .increase,\n  & > .decrease {\n    width: 25px;\n    height: 25px;\n    border-radius: 25px;\n    display: inline-block;\n    background-color: rgba(#121E48, 0.1);\n    margin: 0 15px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    box-shadow: 0 4px 8px 3px rgba(#121E48, 0.03);\n  }\n\n  & > .decrease {\n    &:before {\n      content: \"\";\n      width: 10px;\n      height: 1px;\n      background: white;\n      display: inline-block;\n    }\n  }\n\n  & > .increase {\n    &:before,\n    &:after {\n      content: \"\";\n      width: 10px;\n      height: 1px;\n      background: white;\n      display: inline-block;\n    }\n    &:after{\n      position: absolute;\n      transform: rotate(90deg);\n    }\n  }\n}\n"]}]);
 
 
 
@@ -478,7 +503,7 @@ exports.push([module.i, ".range {\n  height: 8px;\n  width: 180px;\n  margin-top
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".wrapper-selector {\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  position: absolute;\n  border-radius: 5px;\n}\n", "",{"version":3,"sources":["/Users/convenia/Code/vue-croep/src/components/CSelector.vue"],"names":[],"mappings":"AAkDA;EACE,MAAM;EACN,OAAO;EACP,QAAQ;EACR,SAAS;EACT,kBAAkB;EAClB,kBAAkB;AAAA","file":"CSelector.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.wrapper-selector {\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  position: absolute;\n  border-radius: 5px;\n}\n"]}]);
+exports.push([module.i, ".wrapper-selector {\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  position: absolute;\n  border-radius: 5px;\n}\n", "",{"version":3,"sources":["/Users/convenia/Code/vue-croep/src/components/CSelector.vue"],"names":[],"mappings":"AAgDA;EACE,WAAW;EACX,YAAY;EACZ,MAAM;EACN,OAAO;EACP,QAAQ;EACR,SAAS;EACT,kBAAkB;EAClB,kBAAkB;AAAA","file":"CSelector.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.wrapper-selector {\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  position: absolute;\n  border-radius: 5px;\n}\n"]}]);
 
 
 
@@ -600,6 +625,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'example',
@@ -609,7 +636,8 @@ __webpack_require__.r(__webpack_exports__);
 
   data() {
     return {
-      src: ''
+      src: '',
+      image: null
     };
   },
 
@@ -684,17 +712,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -714,7 +731,7 @@ const isMobile = () => {
   props: {
     size: {
       type: Number,
-      default: 300
+      default: 400
     },
     src: {
       type: String,
@@ -724,6 +741,8 @@ const isMobile = () => {
 
   data() {
     return {
+      canvas: null,
+      timer: null,
       events: {},
       coordinates: {
         x: null,
@@ -739,9 +758,6 @@ const isMobile = () => {
   },
 
   watch: {
-    isLoaded: {
-      handler: 'init'
-    },
     selector: {
       handler: 'update'
     },
@@ -759,20 +775,26 @@ const isMobile = () => {
   },
 
   computed: {
+    orientation() {
+      if (this.coordinates.width > this.coordinates.height) return 'landscape';
+      if (this.coordinates.width < this.coordinates.height) return 'portrait';
+      if (this.coordinates.width == this.coordinates.height) return 'square';
+    },
+
     translate() {
       const {
         x,
         y,
+        height,
         width
       } = this.coordinates;
-      const scale = width / this.selector;
+      const scale = height / this.selector;
       const halfScale = scale / 2;
-      const halfImage = this.size / 2;
       const halfSelector = this.selector / 2;
       return {
         scale,
+        halfScale,
         halfSelector,
-        size: halfImage * scale,
         x: (-x + halfSelector) * halfScale,
         y: (-y + halfSelector) * halfScale
       };
@@ -780,29 +802,34 @@ const isMobile = () => {
 
     selectorStyle() {
       const {
-        size,
         x,
         y
       } = this.translate;
       return {
-        'width': `${size}px`,
-        'height': `${size}px`,
         'transform': `translateX(${x}px) translateY(${y}px)`
-      };
-    }
-
-  },
-  methods: {
-    init() {
-      if (!this.isLoaded) return;
-      this.coordinates = {
-        x: this.size / 2,
-        y: this.size / 2,
-        width: this.size,
-        height: this.size
       };
     },
 
+    orientedSize() {
+      const {
+        width,
+        height
+      } = this.coordinates;
+      return this.orientation == 'landscape' ? height : width;
+    }
+
+  },
+
+  mounted() {
+    this.canvas = document.createElement('canvas');
+    window.addEventListener('resize', this.onResize);
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize);
+  },
+
+  methods: {
     range(λ) {
       this.selector = +λ.target.value;
     },
@@ -825,25 +852,35 @@ const isMobile = () => {
 
     update(e) {
       const {
+        width,
         height
       } = this.coordinates;
-      const {
-        halfSelector
-      } = this.translate;
       const x = this.getPosition(e, 'x') || this.coordinates.x;
       const y = this.getPosition(e, 'y') || this.coordinates.y;
       this.coordinates = { ...this.coordinates,
         x,
         y
-      }; // fix positioning if passing container
+      };
+      this.updateBoundaries(x, y);
+    },
 
+    updateBoundaries(x, y) {
+      const {
+        width,
+        height
+      } = this.coordinates;
+      const {
+        halfSelector
+      } = this.translate;
       if (y <= this.selector / 2) this.coordinates.y = halfSelector; // up
 
       if (x <= this.selector / 2) this.coordinates.x = halfSelector; // left
 
       if (y >= height - this.selector / 2) this.coordinates.y = height - halfSelector; // down
 
-      if (x >= height - this.selector / 2) this.coordinates.x = height - halfSelector; // right
+      if (x >= width - this.selector / 2) this.coordinates.x = width - halfSelector; // right
+
+      if (this.selector > this.orientedSize) this.selector = this.orientedSize;
     },
 
     crop() {
@@ -852,16 +889,49 @@ const isMobile = () => {
         return;
       }
 
-      const image = this.$refs.image.$el.children.item(1);
-      let canvas = document.getElementById('canvas');
-      let ctx = canvas.getContext('2d');
+      const image = this.$refs.image;
+      const ctx = this.canvas.getContext('2d');
       const {
-        size,
         x,
-        y
-      } = this.translate;
-      ctx.drawImage(image, x, y, size, size);
-      this.$emit('cropped', canvas.toDataURL());
+        y,
+        width,
+        height
+      } = this.coordinates;
+      const scale = this.orientedSize / this.selector;
+      this.canvas.width = this.orientedSize;
+      this.canvas.height = this.orientedSize;
+      ctx.drawImage(image, -(x - this.selector / 2) * scale, -(y - this.selector / 2) * scale, width * scale, height * scale);
+      this.$emit('cropped', this.canvas.toDataURL());
+    },
+
+    onImageLoad(event) {
+      const {
+        width,
+        height
+      } = event.target.getBoundingClientRect();
+      this.coordinates = {
+        x: width / 2,
+        y: height / 2,
+        width: width,
+        height: height
+      };
+      this.updateBoundaries(this.coordinates.x, this.coordinates.y);
+      this.isLoaded = true;
+    },
+
+    onResize(event) {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+        const {
+          width,
+          height
+        } = this.$refs.image.getBoundingClientRect();
+        this.coordinates = { ...this.coordinates,
+          width: width,
+          height: height
+        };
+        this.updateBoundaries(this.coordinates.x, this.coordinates.y);
+      }, 50);
     }
 
   }
@@ -878,6 +948,12 @@ const isMobile = () => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -944,12 +1020,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'c-selector',
   props: {
     src: String,
-    size: Number,
     selector: Number,
     coordinates: Object
   }
@@ -1753,6 +1827,27 @@ function normalizeComponent (
   }
 }
 
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js?!./node_modules/css-loader/dist/cjs.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./examples/App.vue?vue&type=style&index=0&lang=scss&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-style-loader??ref--5-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--5-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js??ref--5-oneOf-1-2!./node_modules/cache-loader/dist/cjs.js??ref--2-0!./node_modules/vue-loader/lib??vue-loader-options!./examples/App.vue?vue&type=style&index=0&lang=scss& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-1-1!../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../node_modules/sass-loader/dist/cjs.js??ref--5-oneOf-1-2!../node_modules/cache-loader/dist/cjs.js??ref--2-0!../node_modules/vue-loader/lib??vue-loader-options!./App.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./examples/App.vue?vue&type=style&index=0&lang=scss&");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! ../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("4f5b32ac", content, false, {"sourceMap":true});
+// Hot Module Replacement
+if(false) {}
 
 /***/ }),
 
