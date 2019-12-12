@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div class="app">
     <input type="file" @change="getBase64">
 
-    <vue-croep ref="croep" :src="src" />
+    <vue-croep ref="croep" :src="src" @cropped="image = $event" />
+
+    <img v-if="image" class="image" :src="image" />
 
     <button @click="crop">crop</button>
   </div>
@@ -18,7 +20,8 @@ export default {
 
   data () {
     return {
-      src: ''
+      src: '',
+      image: null
     }
   },
 
@@ -37,3 +40,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.app {
+  & > .image {
+    border-radius: 999px;
+  }
+}
+</style>

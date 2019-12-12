@@ -2,7 +2,6 @@
   <svg
     fill="white"
     class="wrapper-selector"
-    :style="{ width: size + 'px', height: size + 'px' }"
   >
     <defs>
       <filter id="shadow">
@@ -40,7 +39,6 @@ export default {
 
   props: {
     src: String,
-    size: Number,
     selector: Number,
     coordinates: Object
   }
@@ -49,6 +47,8 @@ export default {
 
 <style lang="scss">
 .wrapper-selector {
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;

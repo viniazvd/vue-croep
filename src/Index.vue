@@ -7,26 +7,22 @@
         [events.end]: () => isDragging = false
       }"
     >
-      <vue-coe-image
+      <img
         ref="image"
         class="image"
-        fallback="https://i.ytimg.com/vi/Yt9t9e9gmmw/maxresdefault.jpg"
         :src="src"
         :style="{
-          width: size + 'px',
-          height: size + 'px',
+          maxHeight: size + 'px',
           opacity: isDragging ? 1 : 0.7
         }"
         crossorigin="anonymous"
-        @error="hasError = true"
-        @intersect="isLoaded = true"
-        v-on:[events.start].native.prevent="isDragging = true"
+        @load="onImageLoad"
+        v-on:[events.start].prevent="isDragging = true"
       />
 
       <c-selector
         v-if="isLoaded && !hasError"
         :src="src"
-        :size="size"
         :selector="selector"
         :coordinates="coordinates"
       />
@@ -34,15 +30,8 @@
 
     <c-range
       :selector="selector"
-      :max-range="coordinates.width"
+      :max-range="orientedSize"
       @update:selector="range"
-    />
-
-    <canvas
-      id="canvas"
-      :width="coordinates.width / 2"
-      :height="coordinates.width / 2"
-      style="border: 1px solid black; border-radius: 50%"
     />
   </div>
 </template>
@@ -66,7 +55,7 @@ export default {
   props: {
     size: {
       type: Number,
-      default: 300
+      default: 400
     },
 
     src: {
@@ -77,6 +66,8 @@ export default {
 
   data () {
     return {
+      canvas: null,
+      timer: null,
       events: {},
       coordinates: {
         x: null,
@@ -92,7 +83,6 @@ export default {
   },
 
   watch: {
-    isLoaded: { handler: 'init' },
     selector: { handler: 'update' },
     src: { handler: 'resetLoader' }
   },
@@ -106,46 +96,57 @@ export default {
   },
 
   computed: {
+    orientation () {
+      if (this.coordinates.width > this.coordinates.height)
+        return 'landscape'
+      if (this.coordinates.width < this.coordinates.height)
+        return 'portrait'
+      if (this.coordinates.width == this.coordinates.height)
+        return 'square'
+    },
+
     translate () {
-      const { x, y, width } = this.coordinates
-      const scale = width / this.selector
+      const { x, y, height, width } = this.coordinates
+      const scale = height / this.selector
 
       const halfScale = scale / 2
-      const halfImage = this.size / 2
       const halfSelector = this.selector / 2
 
       return {
         scale,
+        halfScale,
         halfSelector,
-        size: halfImage * scale,
         x: (-x + halfSelector) * halfScale,
         y: (-y + halfSelector) * halfScale
       }
     },
 
     selectorStyle () {
-      const { size, x, y } = this.translate
+      const { x, y } = this.translate
 
       return {
-        'width': `${size}px`,
-        'height': `${size}px`,
         'transform': `translateX(${x}px) translateY(${y}px)`
-      }
-    }
-  },
-
-  methods: {
-    init () {
-      if (!this.isLoaded) return
-
-      this.coordinates = {
-        x: this.size / 2,
-        y: this.size / 2,
-        width: this.size,
-        height: this.size
       }
     },
 
+    orientedSize () {
+      const { width, height } = this.coordinates
+
+      return this.orientation == 'landscape' ? height : width
+    }
+  },
+
+  mounted () {
+    this.canvas = document.createElement('canvas')
+
+    window.addEventListener('resize', this.onResize)
+  },
+
+  beforeDestroy () {
+    window.removeEventListener('resize', this.onResize)
+  },
+
+  methods: {
     range (λ) {
       this.selector = +λ.target.value
     },
@@ -170,19 +171,26 @@ export default {
     },
 
     update (e) {
-      const { height } = this.coordinates
-      const { halfSelector } = this.translate
+      const { width, height } = this.coordinates
 
       const x = this.getPosition(e, 'x') || this.coordinates.x
       const y = this.getPosition(e, 'y') || this.coordinates.y
 
       this.coordinates = { ...this.coordinates, x, y }
+      this.updateBoundaries(x, y)
+    },
 
-      // fix positioning if passing container
+    updateBoundaries (x, y) {
+      const { width, height } = this.coordinates
+      const { halfSelector } = this.translate
+
       if (y <= this.selector / 2) this.coordinates.y = halfSelector // up
       if (x <= this.selector / 2) this.coordinates.x = halfSelector // left
       if (y >= height - this.selector / 2) this.coordinates.y = height - halfSelector // down
-      if (x >= height - this.selector / 2) this.coordinates.x = height - halfSelector // right
+      if (x >= width - this.selector / 2) this.coordinates.x = width - halfSelector // right
+
+      if (this.selector > this.orientedSize)
+        this.selector = this.orientedSize
     },
 
     crop () {
@@ -191,16 +199,54 @@ export default {
         return
       }
 
-      const image = this.$refs.image.$el.children.item(1)
+      const image = this.$refs.image
+      const ctx = this.canvas.getContext('2d')
 
-      let canvas = document.getElementById('canvas')
-      let ctx = canvas.getContext('2d')
+      const { x, y, width, height } = this.coordinates
+      const scale = this.orientedSize / this.selector
 
-      const { size, x, y } = this.translate
+      this.canvas.width = this.orientedSize
+      this.canvas.height = this.orientedSize
 
-      ctx.drawImage(image, x, y, size, size)
+      ctx.drawImage(
+        image,
+        - (x - this.selector / 2) * scale,
+        - (y - this.selector / 2) * scale,
+        width * scale,
+        height * scale
+      )
 
-      this.$emit('cropped', canvas.toDataURL())
+      this.$emit('cropped', this.canvas.toDataURL())
+    },
+
+    onImageLoad (event) {
+      const { width, height } = event.target.getBoundingClientRect()
+
+      this.coordinates = {
+        x: width / 2,
+        y: height / 2,
+        width: width,
+        height: height
+      }
+
+      this.updateBoundaries(this.coordinates.x, this.coordinates.y)
+      this.isLoaded = true
+    },
+
+    onResize (event) {
+      clearTimeout(this.timer)
+
+      this.timer = setTimeout(() => {
+        const { width, height } = this.$refs.image.getBoundingClientRect()
+
+        this.coordinates = {
+          ...this.coordinates,
+          width: width,
+          height: height
+        }
+
+        this.updateBoundaries(this.coordinates.x, this.coordinates.y)
+      }, 50)
     }
   }
 }
@@ -222,17 +268,13 @@ body { margin: 0; padding: 0; }
 
     & > .image {
       z-index: 1;
+      height: auto;
+      max-width: 100%;
       cursor: grab;
       display: block;
       position: relative;
       clip-path: url(#mask);
       -webkit-clip-path: url(#mask);
-
-      & > .lazy-load-image {
-        height: 100%;
-        filter: none;
-        will-change: auto;
-      }
     }
   }
 }
