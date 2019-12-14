@@ -159,9 +159,10 @@ export default {
 
     getPosition (e, position) {
       const axis = position.toUpperCase()
+      const rect = this.$refs.image.getBoundingClientRect()
 
       const desktopEvent = e['offset' + axis]
-      const offset = axis == 'X' ? e.target.parentNode.offsetLeft : e.target.parentNode.offsetTop
+      const offset = axis == 'X' ? rect.left : rect.top
       const mobileEvent = e.changedTouches && e.changedTouches[0]['client' + axis] - offset
 
       return mobileEvent || desktopEvent
