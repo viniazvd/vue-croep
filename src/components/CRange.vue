@@ -1,18 +1,18 @@
 <template>
   <div class="range">
-    <span class="decrease"></span>
+    <button class="decrease" @click="onDecrease"></button>
 
     <input
       step="1"
-      min="100"
       type="range"
       class="input"
-      :value="selector"
-      :max="maxRange"
-      @input="range => $emit('update:selector', range)"
+      :value="value"
+      :min="min"
+      :max="max"
+      @input="onChange"
     >
 
-    <span class="increase"></span>
+    <button class="increase" @click="onIncrease"></button>
   </div>
 </template>
 
@@ -21,8 +21,27 @@ export default {
   name: 'c-range',
 
   props: {
-    selector: Number,
-    maxRange: Number
+    value: Number,
+    min: Number,
+    max: Number
+  },
+
+  methods: {
+    onChange (event) {
+      this.$emit('input', +event.target.value)
+    },
+
+    onDecrease () {
+      const value = this.value - this.max / 4
+
+      this.$emit('input', value <= this.min ? this.min : value)
+    },
+
+    onIncrease () {
+      const value = this.value + this.max / 4
+
+      this.$emit('input', value >= this.max ? this.max : value)
+    }
   }
 }
 </script>
@@ -46,7 +65,7 @@ export default {
       width: 180px;
       cursor: pointer;
       border-radius: 25px;
-      background-color: rgba(#121E48, 0.1);
+      background-color: #dfe1e6;
     }
 
     // ball
@@ -68,12 +87,15 @@ export default {
     height: 25px;
     border-radius: 25px;
     display: inline-block;
-    background-color: rgba(#121E48, 0.1);
+    background-color: #dfe1e6;
     margin: 0 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px 3px rgba(#121E48, 0.03);
+    cursor: pointer;
+    border: 0;
+    outline: none;
   }
 
   & > .decrease {

@@ -29,9 +29,10 @@
     </div>
 
     <c-range
-      :selector="selector"
-      :max-range="orientedSize"
-      @update:selector="range"
+      :value="selector"
+      :min="100"
+      :max="orientedSize"
+      @input="range"
     />
   </div>
 </template>
@@ -83,7 +84,7 @@ export default {
   },
 
   watch: {
-    selector: { handler: 'update' },
+    selector: { handler: 'updateBoundaries' },
     src: { handler: 'resetLoader' }
   },
 
@@ -147,8 +148,9 @@ export default {
   },
 
   methods: {
-    range (λ) {
-      this.selector = +λ.target.value
+    range (value) {
+      this.selector = value
+      this.updateBoundaries(this.coordinates.x, this.coordinates.y)
     },
 
     resetLoader () {
@@ -159,7 +161,8 @@ export default {
       const axis = position.toUpperCase()
 
       const desktopEvent = e['offset' + axis]
-      const mobileEvent = e.changedTouches && e.changedTouches[0]['client' + axis]
+      const offset = axis == 'X' ? e.target.parentNode.offsetLeft : e.target.parentNode.offsetTop
+      const mobileEvent = e.changedTouches && e.changedTouches[0]['client' + axis] - offset
 
       return mobileEvent || desktopEvent
     },

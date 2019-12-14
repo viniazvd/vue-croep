@@ -303,8 +303,8 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("c-range", {
-        attrs: { selector: _vm.selector, "max-range": _vm.orientedSize },
-        on: { "update:selector": _vm.range }
+        attrs: { value: _vm.selector, min: 100, max: _vm.orientedSize },
+        on: { input: _vm.range }
       })
     ],
     1
@@ -333,20 +333,16 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "range" }, [
-    _c("span", { staticClass: "decrease" }),
+    _c("button", { staticClass: "decrease", on: { click: _vm.onDecrease } }),
     _vm._v(" "),
     _c("input", {
       staticClass: "input",
-      attrs: { step: "1", min: "100", type: "range", max: _vm.maxRange },
-      domProps: { value: _vm.selector },
-      on: {
-        input: function(range) {
-          return _vm.$emit("update:selector", range)
-        }
-      }
+      attrs: { step: "1", type: "range", min: _vm.min, max: _vm.max },
+      domProps: { value: _vm.value },
+      on: { input: _vm.onChange }
     }),
     _vm._v(" "),
-    _c("span", { staticClass: "increase" })
+    _c("button", { staticClass: "increase", on: { click: _vm.onIncrease } })
   ])
 }
 var staticRenderFns = []
@@ -458,7 +454,7 @@ exports.push([module.i, ".filter-defs-svg { display: none; }\n\n.lazy-load-image
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".app > .image {\n  border-radius: 999px;\n}\n", "",{"version":3,"sources":["/Users/convenia/Code/vue-croep/examples/App.vue"],"names":[],"mappings":"AA4CA;EAEI,oBAAoB;AAAA","file":"App.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.app {\n  & > .image {\n    border-radius: 999px;\n  }\n}\n"]}]);
+exports.push([module.i, ".app > .image {\n  border-radius: 999px;\n}\n", "",{"version":3,"sources":["/home/giseudo/Code/vue-croep/examples/App.vue"],"names":[],"mappings":"AA4CA;EAEI,oBAAoB;AAAA","file":"App.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.app {\n  & > .image {\n    border-radius: 999px;\n  }\n}\n"]}]);
 
 
 
@@ -473,7 +469,7 @@ exports.push([module.i, ".app > .image {\n  border-radius: 999px;\n}\n", "",{"ve
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "* {\n  box-sizing: border-box;\n}\nbody {\n  margin: 0;\n  padding: 0;\n}\n.vue-croep {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.vue-croep > .wrapper {\n    position: relative;\n    background: white;\n    display: inline-block;\n}\n.vue-croep > .wrapper > .image {\n      z-index: 1;\n      height: auto;\n      max-width: 100%;\n      cursor: grab;\n      display: block;\n      position: relative;\n      clip-path: url(#mask);\n      -webkit-clip-path: url(#mask);\n}\n", "",{"version":3,"sources":["/Users/convenia/Code/vue-croep/src/Index.vue"],"names":[],"mappings":"AA+PA;EAAI,sBAAsB;AAAA;AAC1B;EAAO,SAAS;EAAE,UAAU;AAAA;AAE5B;EACE,aAAa;EACb,mBAAmB;EACnB,sBAAsB;AAAA;AAHxB;IAMI,kBAAkB;IAClB,iBAAiB;IACjB,qBAAqB;AAAA;AARzB;MAWM,UAAU;MACV,YAAY;MACZ,eAAe;MACf,YAAY;MACZ,cAAc;MACd,kBAAkB;MAClB,qBAAqB;MACrB,6BAA6B;AAAA","file":"Index.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n* { box-sizing: border-box; }\nbody { margin: 0; padding: 0; }\n\n.vue-croep {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n\n  & > .wrapper {\n    position: relative;\n    background: white;\n    display: inline-block;\n\n    & > .image {\n      z-index: 1;\n      height: auto;\n      max-width: 100%;\n      cursor: grab;\n      display: block;\n      position: relative;\n      clip-path: url(#mask);\n      -webkit-clip-path: url(#mask);\n    }\n  }\n}\n"]}]);
+exports.push([module.i, "* {\n  box-sizing: border-box;\n}\nbody {\n  margin: 0;\n  padding: 0;\n}\n.vue-croep {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.vue-croep > .wrapper {\n    position: relative;\n    background: white;\n    display: inline-block;\n}\n.vue-croep > .wrapper > .image {\n      z-index: 1;\n      height: auto;\n      max-width: 100%;\n      cursor: grab;\n      display: block;\n      position: relative;\n      clip-path: url(#mask);\n      -webkit-clip-path: url(#mask);\n}\n", "",{"version":3,"sources":["/home/giseudo/Code/vue-croep/src/Index.vue"],"names":[],"mappings":"AAkQA;EAAI,sBAAsB;AAAA;AAC1B;EAAO,SAAS;EAAE,UAAU;AAAA;AAE5B;EACE,aAAa;EACb,mBAAmB;EACnB,sBAAsB;AAAA;AAHxB;IAMI,kBAAkB;IAClB,iBAAiB;IACjB,qBAAqB;AAAA;AARzB;MAWM,UAAU;MACV,YAAY;MACZ,eAAe;MACf,YAAY;MACZ,cAAc;MACd,kBAAkB;MAClB,qBAAqB;MACrB,6BAA6B;AAAA","file":"Index.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n* { box-sizing: border-box; }\nbody { margin: 0; padding: 0; }\n\n.vue-croep {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n\n  & > .wrapper {\n    position: relative;\n    background: white;\n    display: inline-block;\n\n    & > .image {\n      z-index: 1;\n      height: auto;\n      max-width: 100%;\n      cursor: grab;\n      display: block;\n      position: relative;\n      clip-path: url(#mask);\n      -webkit-clip-path: url(#mask);\n    }\n  }\n}\n"]}]);
 
 
 
@@ -488,7 +484,7 @@ exports.push([module.i, "* {\n  box-sizing: border-box;\n}\nbody {\n  margin: 0;
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".range {\n  margin-top: 40px;\n  display: flex;\n  align-items: center;\n}\n.range > .input {\n    height: 8px;\n    width: 180px;\n    -webkit-appearance: none;\n}\n.range > .input:focus {\n      outline: none;\n}\n.range > .input::-webkit-slider-runnable-track {\n      height: 8px;\n      width: 180px;\n      cursor: pointer;\n      border-radius: 25px;\n      background-color: rgba(18, 30, 72, 0.1);\n}\n.range > .input::-webkit-slider-thumb {\n      width: 14px;\n      height: 14px;\n      cursor: pointer;\n      margin-top: -4px;\n      border-radius: 15px;\n      background: #FFFFFF;\n      box-shadow: 0 0 11px 3px rgba(18, 30, 72, 0.1);\n      -webkit-appearance: none;\n}\n.range > .increase,\n  .range > .decrease {\n    width: 25px;\n    height: 25px;\n    border-radius: 25px;\n    display: inline-block;\n    background-color: rgba(18, 30, 72, 0.1);\n    margin: 0 15px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    box-shadow: 0 4px 8px 3px rgba(18, 30, 72, 0.03);\n}\n.range > .decrease:before {\n    content: \"\";\n    width: 10px;\n    height: 1px;\n    background: white;\n    display: inline-block;\n}\n.range > .increase:before, .range > .increase:after {\n    content: \"\";\n    width: 10px;\n    height: 1px;\n    background: white;\n    display: inline-block;\n}\n.range > .increase:after {\n    position: absolute;\n    transform: rotate(90deg);\n}\n", "",{"version":3,"sources":["/Users/convenia/Code/vue-croep/src/components/CRange.vue"],"names":[],"mappings":"AA8BA;EACE,gBAAgB;EAChB,aAAa;EACb,mBAAmB;AAAA;AAHrB;IAMI,WAAW;IACX,YAAY;IACZ,wBAAwB;AAAA;AAR5B;MAUc,aAAa;AAAA;AAV3B;MAcM,WAAW;MACX,YAAY;MACZ,eAAe;MACf,mBAAmB;MACnB,uCAA8B;AAAA;AAlBpC;MAuBM,WAAW;MACX,YAAY;MACZ,eAAe;MACf,gBAAgB;MAChB,mBAAmB;MACnB,mBAAmB;MACnB,8CAAqC;MACrC,wBAAwB;AAAA;AA9B9B;;IAoCI,WAAW;IACX,YAAY;IACZ,mBAAmB;IACnB,qBAAqB;IACrB,uCAA8B;IAC9B,cAAc;IACd,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,gDAAsC;AAAA;AA7C1C;IAkDM,WAAW;IACX,WAAW;IACX,WAAW;IACX,iBAAiB;IACjB,qBAAqB;AAAA;AAtD3B;IA6DM,WAAW;IACX,WAAW;IACX,WAAW;IACX,iBAAiB;IACjB,qBAAqB;AAAA;AAjE3B;IAoEM,kBAAkB;IAClB,wBAAwB;AAAA","file":"CRange.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.range {\n  margin-top: 40px;\n  display: flex;\n  align-items: center;\n\n  & > .input {\n    height: 8px;\n    width: 180px;\n    -webkit-appearance: none;\n\n    &:focus { outline: none; }\n\n    // bar\n    &::-webkit-slider-runnable-track {\n      height: 8px;\n      width: 180px;\n      cursor: pointer;\n      border-radius: 25px;\n      background-color: rgba(#121E48, 0.1);\n    }\n\n    // ball\n    &::-webkit-slider-thumb {\n      width: 14px;\n      height: 14px;\n      cursor: pointer;\n      margin-top: -4px;\n      border-radius: 15px;\n      background: #FFFFFF;\n      box-shadow: 0 0 11px 3px rgba(#121E48, 0.1);\n      -webkit-appearance: none;\n    }\n  }\n\n  & > .increase,\n  & > .decrease {\n    width: 25px;\n    height: 25px;\n    border-radius: 25px;\n    display: inline-block;\n    background-color: rgba(#121E48, 0.1);\n    margin: 0 15px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    box-shadow: 0 4px 8px 3px rgba(#121E48, 0.03);\n  }\n\n  & > .decrease {\n    &:before {\n      content: \"\";\n      width: 10px;\n      height: 1px;\n      background: white;\n      display: inline-block;\n    }\n  }\n\n  & > .increase {\n    &:before,\n    &:after {\n      content: \"\";\n      width: 10px;\n      height: 1px;\n      background: white;\n      display: inline-block;\n    }\n    &:after{\n      position: absolute;\n      transform: rotate(90deg);\n    }\n  }\n}\n"]}]);
+exports.push([module.i, ".range {\n  margin-top: 40px;\n  display: flex;\n  align-items: center;\n}\n.range > .input {\n    height: 8px;\n    width: 180px;\n    -webkit-appearance: none;\n}\n.range > .input:focus {\n      outline: none;\n}\n.range > .input::-webkit-slider-runnable-track {\n      height: 8px;\n      width: 180px;\n      cursor: pointer;\n      border-radius: 25px;\n      background-color: #dfe1e6;\n}\n.range > .input::-webkit-slider-thumb {\n      width: 14px;\n      height: 14px;\n      cursor: pointer;\n      margin-top: -4px;\n      border-radius: 15px;\n      background: #FFFFFF;\n      box-shadow: 0 0 11px 3px rgba(18, 30, 72, 0.1);\n      -webkit-appearance: none;\n}\n.range > .increase,\n  .range > .decrease {\n    width: 25px;\n    height: 25px;\n    border-radius: 25px;\n    display: inline-block;\n    background-color: #dfe1e6;\n    margin: 0 15px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    box-shadow: 0 4px 8px 3px rgba(18, 30, 72, 0.03);\n    cursor: pointer;\n    border: 0;\n    outline: none;\n}\n.range > .decrease:before {\n    content: \"\";\n    width: 10px;\n    height: 1px;\n    background: white;\n    display: inline-block;\n}\n.range > .increase:before, .range > .increase:after {\n    content: \"\";\n    width: 10px;\n    height: 1px;\n    background: white;\n    display: inline-block;\n}\n.range > .increase:after {\n    position: absolute;\n    transform: rotate(90deg);\n}\n", "",{"version":3,"sources":["/home/giseudo/Code/vue-croep/src/components/CRange.vue"],"names":[],"mappings":"AAiDA;EACE,gBAAgB;EAChB,aAAa;EACb,mBAAmB;AAAA;AAHrB;IAMI,WAAW;IACX,YAAY;IACZ,wBAAwB;AAAA;AAR5B;MAUc,aAAa;AAAA;AAV3B;MAcM,WAAW;MACX,YAAY;MACZ,eAAe;MACf,mBAAmB;MACnB,yBAAyB;AAAA;AAlB/B;MAuBM,WAAW;MACX,YAAY;MACZ,eAAe;MACf,gBAAgB;MAChB,mBAAmB;MACnB,mBAAmB;MACnB,8CAAqC;MACrC,wBAAwB;AAAA;AA9B9B;;IAoCI,WAAW;IACX,YAAY;IACZ,mBAAmB;IACnB,qBAAqB;IACrB,yBAAyB;IACzB,cAAc;IACd,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,gDAAsC;IACtC,eAAe;IACf,SAAS;IACT,aAAa;AAAA;AAhDjB;IAqDM,WAAW;IACX,WAAW;IACX,WAAW;IACX,iBAAiB;IACjB,qBAAqB;AAAA;AAzD3B;IAgEM,WAAW;IACX,WAAW;IACX,WAAW;IACX,iBAAiB;IACjB,qBAAqB;AAAA;AApE3B;IAuEM,kBAAkB;IAClB,wBAAwB;AAAA","file":"CRange.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.range {\n  margin-top: 40px;\n  display: flex;\n  align-items: center;\n\n  & > .input {\n    height: 8px;\n    width: 180px;\n    -webkit-appearance: none;\n\n    &:focus { outline: none; }\n\n    // bar\n    &::-webkit-slider-runnable-track {\n      height: 8px;\n      width: 180px;\n      cursor: pointer;\n      border-radius: 25px;\n      background-color: #dfe1e6;\n    }\n\n    // ball\n    &::-webkit-slider-thumb {\n      width: 14px;\n      height: 14px;\n      cursor: pointer;\n      margin-top: -4px;\n      border-radius: 15px;\n      background: #FFFFFF;\n      box-shadow: 0 0 11px 3px rgba(#121E48, 0.1);\n      -webkit-appearance: none;\n    }\n  }\n\n  & > .increase,\n  & > .decrease {\n    width: 25px;\n    height: 25px;\n    border-radius: 25px;\n    display: inline-block;\n    background-color: #dfe1e6;\n    margin: 0 15px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    box-shadow: 0 4px 8px 3px rgba(#121E48, 0.03);\n    cursor: pointer;\n    border: 0;\n    outline: none;\n  }\n\n  & > .decrease {\n    &:before {\n      content: \"\";\n      width: 10px;\n      height: 1px;\n      background: white;\n      display: inline-block;\n    }\n  }\n\n  & > .increase {\n    &:before,\n    &:after {\n      content: \"\";\n      width: 10px;\n      height: 1px;\n      background: white;\n      display: inline-block;\n    }\n    &:after{\n      position: absolute;\n      transform: rotate(90deg);\n    }\n  }\n}\n"]}]);
 
 
 
@@ -503,7 +499,7 @@ exports.push([module.i, ".range {\n  margin-top: 40px;\n  display: flex;\n  alig
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".wrapper-selector {\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  position: absolute;\n  border-radius: 5px;\n}\n", "",{"version":3,"sources":["/Users/convenia/Code/vue-croep/src/components/CSelector.vue"],"names":[],"mappings":"AAgDA;EACE,WAAW;EACX,YAAY;EACZ,MAAM;EACN,OAAO;EACP,QAAQ;EACR,SAAS;EACT,kBAAkB;EAClB,kBAAkB;AAAA","file":"CSelector.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.wrapper-selector {\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  position: absolute;\n  border-radius: 5px;\n}\n"]}]);
+exports.push([module.i, ".wrapper-selector {\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  position: absolute;\n  border-radius: 5px;\n}\n", "",{"version":3,"sources":["/home/giseudo/Code/vue-croep/src/components/CSelector.vue"],"names":[],"mappings":"AAgDA;EACE,WAAW;EACX,YAAY;EACZ,MAAM;EACN,OAAO;EACP,QAAQ;EACR,SAAS;EACT,kBAAkB;EAClB,kBAAkB;AAAA","file":"CSelector.vue?vue&type=style&index=0&lang=scss&","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.wrapper-selector {\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  position: absolute;\n  border-radius: 5px;\n}\n"]}]);
 
 
 
@@ -712,6 +708,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -759,7 +756,7 @@ const isMobile = () => {
 
   watch: {
     selector: {
-      handler: 'update'
+      handler: 'updateBoundaries'
     },
     src: {
       handler: 'resetLoader'
@@ -830,8 +827,9 @@ const isMobile = () => {
   },
 
   methods: {
-    range(λ) {
-      this.selector = +λ.target.value;
+    range(value) {
+      this.selector = value;
+      this.updateBoundaries(this.coordinates.x, this.coordinates.y);
     },
 
     resetLoader() {
@@ -841,7 +839,8 @@ const isMobile = () => {
     getPosition(e, position) {
       const axis = position.toUpperCase();
       const desktopEvent = e['offset' + axis];
-      const mobileEvent = e.changedTouches && e.changedTouches[0]['client' + axis];
+      const offset = axis == 'X' ? e.target.parentNode.offsetLeft : e.target.parentNode.offsetTop;
+      const mobileEvent = e.changedTouches && e.changedTouches[0]['client' + axis] - offset;
       return mobileEvent || desktopEvent;
     },
 
@@ -969,8 +968,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'c-range',
   props: {
-    selector: Number,
-    maxRange: Number
+    value: Number,
+    min: Number,
+    max: Number
+  },
+  methods: {
+    onChange(event) {
+      this.$emit('input', +event.target.value);
+    },
+
+    onDecrease() {
+      const value = this.value - this.max / 4;
+      this.$emit('input', value <= this.min ? this.min : value);
+    },
+
+    onIncrease() {
+      const value = this.value + this.max / 4;
+      this.$emit('input', value >= this.max ? this.max : value);
+    }
+
   }
 });
 
