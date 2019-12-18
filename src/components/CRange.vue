@@ -1,6 +1,8 @@
 <template>
   <div class="range">
-    <button class="decrease" @click="onDecrease"></button>
+    <button class="decrease" @click="onDecrease">
+      <span></span>
+    </button>
 
     <input
       step="1"
@@ -12,7 +14,9 @@
       @input="onChange"
     >
 
-    <button class="increase" @click="onIncrease"></button>
+    <button class="increase" @click="onIncrease">
+      <span></span>
+    </button>
   </div>
 </template>
 
@@ -66,7 +70,7 @@ export default {
       width: 180px;
       cursor: pointer;
       border-radius: 25px;
-      background-color: #c7cad4;
+      background-color: #d2d4db;
     }
 
     // ball
@@ -88,19 +92,37 @@ export default {
     height: 25px;
     border-radius: 25px;
     display: inline-block;
-    background: #c7cad4;
     margin: 0 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 8px 3px rgba(#121E48, 0.03);
     cursor: pointer;
     border: 0;
     outline: none;
-    transition: .1s ease-out;
+    position: relative;
+    padding: 0;
+    background: linear-gradient(135deg, #BC4CF7 0%, #7873EE 100%);
+    & > span {
+      background: linear-gradient(135deg, #BC4CF7 0%, #7873EE 100%);
+      content: "";
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: calc(50% + 4px);
+      width: 93%;
+      height: 75%;
+      border-radius: inherit;
+      filter: blur(6px);
+      opacity: 0.6;
+      transform: translateX(-50%) translateY(-50%) translateZ(-1px);
+      transition: filter .3s, opacity .3s;
+      flex: 1;
+    }
     &:hover {
-      background: #7873EE;
-      box-shadow: 0 4px 8px 3px rgba(#BC4CF7, 0.1);
+      & > span {
+        filter: blur(10px);
+        opacity: 1;
+      }
     }
   }
 
