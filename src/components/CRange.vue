@@ -81,6 +81,7 @@ export default {
       margin-top: -4px;
       border-radius: 15px;
       background: #FFFFFF;
+      border: 0;
       box-shadow: 0 0 11px 3px rgba(#121E48, 0.1);
       -webkit-appearance: none;
     }
