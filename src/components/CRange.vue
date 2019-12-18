@@ -66,7 +66,7 @@ export default {
       width: 180px;
       cursor: pointer;
       border-radius: 25px;
-      background-color: #dfe1e6;
+      background-color: #c7cad4;
     }
 
     // ball
@@ -88,7 +88,7 @@ export default {
     height: 25px;
     border-radius: 25px;
     display: inline-block;
-    background: #dfe1e6;
+    background: #c7cad4;
     margin: 0 15px;
     display: flex;
     align-items: center;
