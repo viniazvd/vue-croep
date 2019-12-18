@@ -84,7 +84,6 @@ export default {
   },
 
   watch: {
-    selector: { handler: 'updateBoundaries' },
     src: { handler: 'resetLoader' }
   },
 
@@ -267,7 +266,6 @@ body { margin: 0; padding: 0; }
 
   & > .wrapper {
     position: relative;
-    background: white;
     display: inline-block;
 
     & > .image {

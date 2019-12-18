@@ -55,6 +55,7 @@ export default {
   & > .input {
     height: 8px;
     width: 180px;
+    background: transparent;
     -webkit-appearance: none;
 
     &:focus { outline: none; }
@@ -87,7 +88,7 @@ export default {
     height: 25px;
     border-radius: 25px;
     display: inline-block;
-    background-color: #dfe1e6;
+    background: #dfe1e6;
     margin: 0 15px;
     display: flex;
     align-items: center;
@@ -96,6 +97,11 @@ export default {
     cursor: pointer;
     border: 0;
     outline: none;
+    transition: .1s ease-out;
+    &:hover {
+      background: #7873EE;
+      box-shadow: 0 4px 8px 3px rgba(#BC4CF7, 0.1);
+    }
   }
 
   & > .decrease {
